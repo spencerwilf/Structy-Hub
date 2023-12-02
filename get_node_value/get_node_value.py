@@ -4,15 +4,11 @@
 #     self.next = None
 ​
 def get_node_value(head, index):
-  count = 0
-  curr = head
+  if not head:
+    return None
   
-  while curr:
-    if count == index:
-      return curr.val
-    else:
-      curr = curr.next
-      count += 1
+  if index == 0:
+    return head.val
   
-  return None
+  return get_node_value(head.next, index - 1)
 ​
